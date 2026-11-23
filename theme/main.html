@@ -17,7 +17,7 @@
     <meta property="og:url" content="{{ page.canonical_url | e }}">
     {% endif %}
     {% for stylesheet in config.extra_css %}
-    <link rel="stylesheet" href="{{ stylesheet | url }}">
+    <link rel="stylesheet" href="{{ stylesheet | url }}{% if config.extra.asset_version %}?v={{ config.extra.asset_version | e }}{% endif %}">
     {% endfor %}
   </head>
   <body>
@@ -52,7 +52,7 @@
             {% endif %}
             <ul class="post-list">
               {% for post in posts %}
-              <li>
+              <li{% if post.date %} class="post-with-date"{% endif %}>
                 {% if post.date %}
                 <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime('%B') }} {{ post.date.day }}, {{ post.date.year }}</time>
                 {% endif %}

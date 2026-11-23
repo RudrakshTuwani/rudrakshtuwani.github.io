@@ -21,6 +21,7 @@ plugins: []
 strict: true
 
 extra:
+  asset_version: !ENV [GITHUB_SHA, '']
   profiles:
     - title: GitHub
       icon: github
