@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    {% set heading = page.meta.title or page.title %}
+    {% set title = heading if page.is_homepage else heading ~ ' · ' ~ config.site_name %}
+    {% set description = page.meta.description or config.site_description %}
+    <title>{{ title | e }}</title>
+    <meta name="description" content="{{ description | e }}">
+    <meta property="og:title" content="{{ title | e }}">
+    <meta property="og:description" content="{{ description | e }}">
+    <meta property="og:type" content="website">
+    {% if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url | e }}">
+    <meta property="og:url" content="{{ page.canonical_url | e }}">
+    {% endif %}
+    {% for stylesheet in config.extra_css %}
+    <link rel="stylesheet" href="{{ stylesheet | url }}">
+    {% endfor %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="container">
+      <header class="site-header">
+        <nav aria-label="Main navigation">
+          {% for item in nav %}
+          <a href="{{ item.url | url }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.title | e }}</a>
+          {% endfor %}
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">
+        <header class="article-header">
+          <h1>{{ heading | e }}</h1>
+        </header>
+        <div class="prose">{{ page.content }}</div>
+        {% if page.meta.post_list %}
+          {% set latest = page.meta.post_list == 'latest' %}
+          {% set posts = config.extra.posts[:3] if latest else config.extra.posts %}
+          {% set post_heading = 'h3' if latest else 'h2' %}
+          <section class="posts" {% if latest %}aria-labelledby="posts-title"{% else %}aria-label="Posts"{% endif %}>
+            {% if latest %}
+            <div class="section-heading">
+              <h2 id="posts-title">Latest posts</h2>
+              <a href="{{ 'blog/' | url }}">All posts</a>
+            </div>
+            {% endif %}
+            <ul class="post-list">
+              {% for post in posts %}
+              <li>
+                <{{ post_heading }}><a href="{{ post.url | e }}">{{ post.title | e }}</a></{{ post_heading }}>
+                <p>{{ post.description | e }}</p>
+              </li>
+              {% endfor %}
+            </ul>
+          </section>
+        {% endif %}
+      </main>
+      <footer class="site-footer">
+        <p>{{ config.copyright | e }}</p>
+        <div id="analytics-controls"></div>
+      </footer>
+    </div>
+    {% for script in config.extra_javascript %}{{ script | script_tag }}{% endfor %}
+  </body>
+</html>
