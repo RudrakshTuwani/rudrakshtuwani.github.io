@@ -93,11 +93,12 @@ main { flex: 1; padding: 30px 0 42px; }
 
 .post-list li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
   gap: 4px 1rem;
   padding: 14px 0;
 }
+
+.post-list li:has(> time) { grid-template-columns: max-content minmax(0, 1fr); }
 
 #posts-title + .post-list,
 .post-list li + li { border-top: 1px solid var(--line); }
@@ -105,7 +106,6 @@ main { flex: 1; padding: 30px 0 42px; }
 .post-list :is(h2, h3) { margin: 0; font: 600 17px/1.35 var(--sans); }
 
 .post-list time {
-  grid-column: 2;
   color: var(--muted);
   font-size: 0.875rem;
   white-space: nowrap;
