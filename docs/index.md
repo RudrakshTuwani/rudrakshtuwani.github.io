@@ -7,4 +7,4 @@ Hello! I am broadly interested in AI for science and healthcare. Previously, I w
 
 During my master’s at Harvard, I worked with [Andrew Beam](https://www.linkedin.com/in/andrew-beam-01a6aa295/) on medical imaging, language models, and uncertainty quantification.
 
-Feel free to reach out on [Twitter](https://x.com/rudraksh_tuwani) or [LinkedIn](https://www.linkedin.com/in/rudraksh-tuwani/).
+Feel free to reach out on [X](https://x.com/rudraksh_tuwani) or [LinkedIn](https://www.linkedin.com/in/rudraksh-tuwani/).

@@ -35,22 +35,30 @@ a { color: var(--accent); text-underline-offset: 0.2em; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 20px; }
 
 nav a { text-decoration: none; }
 
 nav a:hover,
 nav a[aria-current='page'] { text-decoration: underline; }
 
+.profile-links {
+  display: flex;
+  gap: 6px;
+  margin-inline-start: auto;
+}
+
 .profile-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.35em;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 .profile-link svg {
-  width: 1em;
-  height: 1em;
+  width: 1.125rem;
+  height: 1.125rem;
   flex: none;
   fill: currentColor;
 }
@@ -83,21 +91,27 @@ main { flex: 1; padding: 30px 0 42px; }
 
 .post-list { margin: 11px 0 0; padding: 0; list-style: none; }
 
-.post-list li { padding: 14px 0; }
+.post-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 4px 1rem;
+  padding: 14px 0;
+}
 
 #posts-title + .post-list,
 .post-list li + li { border-top: 1px solid var(--line); }
 
-.post-list :is(h2, h3) { margin: 0 0 3px; font: 600 17px/1.35 var(--sans); }
+.post-list :is(h2, h3) { margin: 0; font: 600 17px/1.35 var(--sans); }
 
 .post-list time {
-  display: block;
-  margin-bottom: 4px;
+  grid-column: 2;
   color: var(--muted);
   font-size: 0.875rem;
+  white-space: nowrap;
 }
 
-.post-list p { margin: 0; color: var(--muted); }
+.post-list p { grid-column: 1 / -1; margin: 0; color: var(--muted); }
 
 .site-footer {
   display: flex;
