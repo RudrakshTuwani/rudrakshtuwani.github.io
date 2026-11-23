@@ -3,4 +3,8 @@ title: Rudraksh Tuwani
 post_list: latest
 ---
 
-I work on machine learning for biology and healthcare. I studied statistics at the University of Delhi and health data science at the Harvard T.H. Chan School of Public Health. Previously, I worked at [Generate Biomedicines](https://generatebiomedicines.com/), with [Andrew Beam](https://www.linkedin.com/in/andrew-beam-01a6aa295/) in the [Beam Lab](http://beamlab.org/) at Harvard, and with [Ganesh Bagler](https://iiitd.ac.in/bagler/) at IIIT Delhi.
+Hello! I am broadly interested in AI for science and healthcare. Previously, I worked at [Generate Biomedicines](https://generatebiomedicines.com/) on protein machine learning and co-authored [Flexible Kernels for Protein Property Prediction](https://proceedings.mlr.press/v306/jankowiak26a.html), which appeared in the ICML 2026 proceedings.
+
+During my master’s at Harvard, I worked with [Andrew Beam](https://www.linkedin.com/in/andrew-beam-01a6aa295/) on medical imaging, language models, and uncertainty quantification.
+
+Feel free to reach out on [Twitter](https://x.com/rudraksh_tuwani) or [LinkedIn](https://www.linkedin.com/in/rudraksh-tuwani/).
