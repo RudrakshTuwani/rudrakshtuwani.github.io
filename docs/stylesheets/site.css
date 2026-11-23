@@ -92,13 +92,19 @@ main { flex: 1; padding: 30px 0 42px; }
 .intro-with-portrait .prose > :last-child { margin-bottom: 0; }
 
 .portrait {
-  display: block;
+  position: relative;
   width: 100%;
-  height: auto;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 40%;
+  overflow: hidden;
   border-radius: 6px;
+}
+
+.portrait img {
+  position: absolute;
+  top: -12%;
+  left: -43%;
+  width: 150%;
+  height: auto;
 }
 
 .posts { margin-top: 34px; }

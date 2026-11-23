@@ -46,7 +46,9 @@
           <div class="prose">{{ page.content }}</div>
           {% if page.meta.portrait %}
           {% set portrait = page.meta.portrait %}
-          <img class="portrait" src="{{ portrait.path | url }}" alt="{{ portrait.alt | e }}" width="{{ portrait.width }}" height="{{ portrait.height }}">
+          <div class="portrait">
+            <img src="{{ portrait.path | url }}" alt="{{ portrait.alt | e }}" width="{{ portrait.width }}" height="{{ portrait.height }}">
+          </div>
           {% endif %}
         </div>
         {% endif %}
