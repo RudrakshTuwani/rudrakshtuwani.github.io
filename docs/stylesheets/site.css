@@ -1,12 +1,11 @@
 :root {
   color-scheme: dark;
-  --paper: #252429;
-  --ink: #e8d8ff;
+  --paper: #101010;
+  --ink: #d8b3ff;
   --body: #e6e2e8;
   --muted: #c0bac7;
   --line: #575060;
-  --accent: #cfafff;
-  --accent-hover: #eee0ff;
+  --accent: #c894ff;
   --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --serif: Charter, 'Iowan Old Style', Palatino, Georgia, serif;
 }
@@ -33,8 +32,6 @@ body {
 }
 
 a { color: var(--accent); text-underline-offset: 0.2em; }
-
-a:hover { color: var(--accent-hover); }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
