@@ -1,6 +1,6 @@
 # Rudraksh Tuwani
 
-The homepage is in `index.html`. The blog index is in `blog/index.html`. Add an article by linking to the public page from the blog index. Each article can still be built and deployed from its project repo.
+The homepage is in `index.html`. Add article links to `blog/index.html` in newest-first order. The homepage displays the first three links from that list. Each article can still be built and deployed from its project repo.
 
 GitHub Pages publishes the root of `main`. To preview it locally, run `python3 -m http.server 8000` and open [localhost](http://localhost:8000).
 

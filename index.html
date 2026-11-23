@@ -6,8 +6,9 @@
     <meta name="description" content="Rudraksh Tuwani’s personal website, project writeups, and notes.">
     <title>Rudraksh Tuwani</title>
     <link rel="canonical" href="https://rudrakshtuwani.github.io/">
-    <link rel="stylesheet" href="/assets/site.css">
+    <link rel="stylesheet" href="/assets/site.css?v=2">
     <script type="module" src="/assets/analytics.js"></script>
+    <script type="module" src="/assets/latest-posts.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -21,8 +22,14 @@
     <main id="main" class="container page">
       <section class="intro" aria-labelledby="page-title">
         <h1 id="page-title">Rudraksh Tuwani</h1>
-        <p>I write about projects I’m building and what I learn along the way.</p>
-        <a class="button" href="/blog/">Read the blog</a>
+        <p>I work on machine learning for biology and healthcare. I studied statistics at the University of Delhi, worked in computational biology at IIIT Delhi, and went on to study health data science at the Harvard T.H. Chan School of Public Health, where I worked on clinical machine learning in Andrew Beam’s lab.</p>
+      </section>
+      <section class="latest" aria-labelledby="latest-title">
+        <div class="section-heading">
+          <h2 id="latest-title">Latest posts</h2>
+          <a href="/blog/">All posts</a>
+        </div>
+        <ul id="latest-posts" class="articles" hidden></ul>
       </section>
     </main>
     <footer class="site-footer container">

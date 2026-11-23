@@ -1,11 +1,11 @@
 :root {
-  color-scheme: light;
-  --background: #f7f8f7;
-  --text: #172320;
-  --muted: #505d56;
-  --line: #cfd7d1;
-  --accent: #275843;
-  --accent-hover: #193d2d;
+  color-scheme: dark;
+  --background: #272727;
+  --text: #f2f0eb;
+  --muted: #cac7c2;
+  --line: #51514e;
+  --accent: #b8d7c7;
+  --accent-hover: #e0f4e9;
   font-family: system-ui, sans-serif;
   line-height: 1.6;
 }
@@ -87,17 +87,21 @@ h1 {
   font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 
-.button {
-  display: inline-block;
-  margin-top: 1.75rem;
-  padding: 0.65rem 1rem;
-  border-radius: 0.3rem;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
+.latest { margin-top: clamp(2.75rem, 7vw, 5rem); }
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
-.button:hover { background: var(--accent-hover); color: white; }
+.section-heading h2 { font-size: clamp(1.65rem, 4vw, 2.15rem); }
+
+.latest .articles { margin-top: 0.9rem; }
+
+.latest .articles li { padding-block: 1rem; }
 
 .articles {
   list-style: none;
