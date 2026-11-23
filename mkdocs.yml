@@ -32,5 +32,5 @@ extra:
   # Keep posts in newest-first order.
   posts:
     - title: Argon can predict protein properties
-      url: /blog/argon/
+      url: /blog/argon-binding/
       date: 2026-11-13
