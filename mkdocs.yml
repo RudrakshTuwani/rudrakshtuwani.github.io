@@ -9,8 +9,6 @@ theme:
 
 nav:
   - Home: index.md
-  - Blog: blog/index.md
-  - GitHub: https://github.com/RudrakshTuwani
 
 extra_css:
   - stylesheets/site.css
@@ -23,8 +21,16 @@ plugins: []
 strict: true
 
 extra:
+  profiles:
+    - title: GitHub
+      icon: github
+      url: https://github.com/RudrakshTuwani
+    - title: LinkedIn
+      icon: linkedin
+      url: https://www.linkedin.com/in/rudraksh-tuwani/
   # Keep posts in newest-first order.
   posts:
     - title: Argon can predict protein properties
       url: https://p3-llms.onrender.com/
+      date: 2026-11-13
       description: A project writeup on using language models to predict protein properties.

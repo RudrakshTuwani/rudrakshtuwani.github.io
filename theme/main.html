@@ -28,28 +28,34 @@
           {% for item in nav %}
           <a href="{{ item.url | url }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.title | e }}</a>
           {% endfor %}
+          {% for profile in config.extra.profiles %}
+          <a class="profile-link" href="{{ profile.url | e }}">
+            {% include 'icons/' ~ profile.icon ~ '.html' %}
+            {{ profile.title | e }}
+          </a>
+          {% endfor %}
         </nav>
       </header>
       <main id="main" tabindex="-1">
         <header class="article-header">
           <h1>{{ heading | e }}</h1>
         </header>
-        <div class="prose">{{ page.content }}</div>
+        {% if page.content | trim %}<div class="prose">{{ page.content }}</div>{% endif %}
         {% if page.meta.post_list %}
           {% set latest = page.meta.post_list == 'latest' %}
           {% set posts = config.extra.posts[:3] if latest else config.extra.posts %}
           {% set post_heading = 'h3' if latest else 'h2' %}
           <section class="posts" {% if latest %}aria-labelledby="posts-title"{% else %}aria-label="Posts"{% endif %}>
             {% if latest %}
-            <div class="section-heading">
-              <h2 id="posts-title">Latest posts</h2>
-              <a href="{{ 'blog/' | url }}">All posts</a>
-            </div>
+            <h2 id="posts-title">Latest posts</h2>
             {% endif %}
             <ul class="post-list">
               {% for post in posts %}
               <li>
                 <{{ post_heading }}><a href="{{ post.url | e }}">{{ post.title | e }}</a></{{ post_heading }}>
+                {% if post.date %}
+                <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime('%B') }} {{ post.date.day }}, {{ post.date.year }}</time>
+                {% endif %}
                 <p>{{ post.description | e }}</p>
               </li>
               {% endfor %}
