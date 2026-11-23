@@ -79,6 +79,28 @@ main { flex: 1; padding: 30px 0 42px; }
 
 .prose p { margin: 0 0 14px; }
 
+.intro-with-portrait {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 11rem;
+  align-items: start;
+  gap: 1.75rem;
+  padding-top: 20px;
+}
+
+.intro-with-portrait .prose { padding-top: 0; }
+
+.intro-with-portrait .prose > :last-child { margin-bottom: 0; }
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 6px;
+}
+
 .posts { margin-top: 34px; }
 
 .article-header + .posts { margin-top: 0; }
@@ -154,4 +176,6 @@ main { flex: 1; padding: 30px 0 42px; }
   .container { padding: 20px 22px; }
   main { padding-top: 26px; }
   .article-header h1 { font-size: 34px; }
+  .intro-with-portrait { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .portrait { width: 8.5rem; }
 }

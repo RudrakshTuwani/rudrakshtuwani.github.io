@@ -41,7 +41,15 @@
         <header class="article-header">
           <h1>{{ heading | e }}</h1>
         </header>
-        {% if page.content | trim %}<div class="prose">{{ page.content }}</div>{% endif %}
+        {% if page.content | trim %}
+        <div{% if page.meta.portrait %} class="intro-with-portrait"{% endif %}>
+          <div class="prose">{{ page.content }}</div>
+          {% if page.meta.portrait %}
+          {% set portrait = page.meta.portrait %}
+          <img class="portrait" src="{{ portrait.path | url }}" alt="{{ portrait.alt | e }}" width="{{ portrait.width }}" height="{{ portrait.height }}">
+          {% endif %}
+        </div>
+        {% endif %}
         {% if page.meta.post_list %}
           {% set latest = page.meta.post_list == 'latest' %}
           {% set posts = config.extra.posts[:3] if latest else config.extra.posts %}
