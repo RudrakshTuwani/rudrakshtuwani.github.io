@@ -8,7 +8,7 @@ theme:
   custom_dir: theme
 
 nav:
-  - Home: index.md
+  - About: index.md
 
 extra_css:
   - stylesheets/site.css
