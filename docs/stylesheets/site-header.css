@@ -1,0 +1,49 @@
+.site-header nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.site-header a {
+  color: #c894ff;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.site-header a:hover,
+.site-header a[aria-current='page'] { text-decoration: underline; }
+
+.site-header a:focus-visible { outline-color: currentColor; }
+
+.site-header .profile-links {
+  display: flex;
+  gap: 6px;
+  margin-inline-start: auto;
+}
+
+.site-header .profile-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.site-header .profile-link svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex: none;
+  fill: currentColor;
+}
+
+.site-header--mirrored {
+  max-width: 850px;
+  margin-inline: auto;
+  padding: 25px 32px 0;
+  font: 16px/1.55 var(--sans);
+}
+
+@media (max-width: 600px) {
+  .site-header--mirrored { padding: 20px 22px 0; }
+}

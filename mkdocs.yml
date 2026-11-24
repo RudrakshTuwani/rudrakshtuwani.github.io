@@ -12,6 +12,7 @@ nav:
 
 extra_css:
   - stylesheets/site.css
+  - stylesheets/site-header.css
 
 plugins: []
 strict: true

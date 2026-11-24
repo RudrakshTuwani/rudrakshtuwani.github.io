@@ -6,6 +6,8 @@ GitHub Actions builds the site with MkDocs and publishes it to GitHub Pages when
 
 To preview the site and article together, install `requirements-docs.txt`, run `mkdocs build --strict`, then run `python3 scripts/mirror_argon.py site/blog/argon-binding` and `python3 -m http.server --directory site 8000`. Open [localhost](http://127.0.0.1:8000/).
 
+The Argon mirror adds the same navigation and social links as the homepage using `theme/site-header.html` and the links in `mkdocs.yml`.
+
 Umami Cloud tracks visits on the personal site and the mirrored article using the shared script in `theme/analytics.html`. Latest posts and the social icons report click events. The tracker limits collection to `rudrakshtuwani.github.io`.
 
 To track Google Search performance, add a URL-prefix property for `https://rudrakshtuwani.github.io/`, verify it in Search Console, and submit `/sitemap.xml`.

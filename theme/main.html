@@ -24,20 +24,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="container">
-      <header class="site-header">
-        <nav aria-label="Main navigation">
-          {% for item in nav %}
-          <a href="{{ item.url | url }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.title | e }}</a>
-          {% endfor %}
-          <div class="profile-links">
-            {% for profile in config.extra.profiles %}
-            <a class="profile-link" href="{{ profile.url | e }}" aria-label="{{ profile.title | e }}" data-umami-event="profile-click" data-umami-event-profile="{{ profile.title | e }}">
-              {% include 'icons/' ~ profile.icon ~ '.html' %}
-            </a>
-            {% endfor %}
-          </div>
-        </nav>
-      </header>
+      {% include 'site-header.html' %}
       <main id="main" tabindex="-1">
         <header class="article-header">
           <h1>{{ heading | e }}</h1>

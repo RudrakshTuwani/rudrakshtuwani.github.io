@@ -1,0 +1,14 @@
+<header class="site-header{% if mirrored %} site-header--mirrored{% endif %}">
+  <nav aria-label="Main navigation">
+    {% for item in nav %}
+    <a href="{{ '/' if mirrored and item.is_homepage else item.url | url }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.title | e }}</a>
+    {% endfor %}
+    <div class="profile-links">
+      {% for profile in config.extra.profiles %}
+      <a class="profile-link" href="{{ profile.url | e }}" aria-label="{{ profile.title | e }}" data-umami-event="profile-click" data-umami-event-profile="{{ profile.title | e }}">
+        {% include 'icons/' ~ profile.icon ~ '.html' %}
+      </a>
+      {% endfor %}
+    </div>
+  </nav>
+</header>
