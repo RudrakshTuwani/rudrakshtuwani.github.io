@@ -155,17 +155,6 @@ main { flex: 1; padding: 30px 0 42px; }
 
 .site-footer p { margin: 0; }
 
-.analytics-button {
-  padding: 0.25rem 0;
-  border: 0;
-  background: transparent;
-  color: var(--accent);
-  cursor: pointer;
-  font: inherit;
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
 .skip-link {
   position: absolute;
   z-index: 1;

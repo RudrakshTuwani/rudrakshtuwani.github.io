@@ -13,10 +13,6 @@ nav:
 extra_css:
   - stylesheets/site.css
 
-extra_javascript:
-  - path: assets/analytics.js
-    type: module
-
 plugins: []
 strict: true
 

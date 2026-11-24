@@ -19,6 +19,7 @@
     {% for stylesheet in config.extra_css %}
     <link rel="stylesheet" href="{{ stylesheet | url }}{% if config.extra.asset_version %}?v={{ config.extra.asset_version | e }}{% endif %}">
     {% endfor %}
+    {% include 'analytics.html' %}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -30,7 +31,7 @@
           {% endfor %}
           <div class="profile-links">
             {% for profile in config.extra.profiles %}
-            <a class="profile-link" href="{{ profile.url | e }}" aria-label="{{ profile.title | e }}">
+            <a class="profile-link" href="{{ profile.url | e }}" aria-label="{{ profile.title | e }}" data-umami-event="profile-click" data-umami-event-profile="{{ profile.title | e }}">
               {% include 'icons/' ~ profile.icon ~ '.html' %}
             </a>
             {% endfor %}
@@ -66,7 +67,7 @@
                 {% if post.date %}
                 <time datetime="{{ post.date.isoformat() }}">{{ post.date.strftime('%B') }} {{ post.date.day }}, {{ post.date.year }}</time>
                 {% endif %}
-                <{{ post_heading }}><a href="{{ post.url | e }}">{{ post.title | e }}</a></{{ post_heading }}>
+                <{{ post_heading }}><a href="{{ post.url | e }}" data-umami-event="article-open" data-umami-event-article="{{ post.title | e }}">{{ post.title | e }}</a></{{ post_heading }}>
                 {% if post.description %}<p>{{ post.description | e }}</p>{% endif %}
               </li>
               {% endfor %}
@@ -76,9 +77,7 @@
       </main>
       <footer class="site-footer">
         <p>{{ config.copyright | e }}</p>
-        <div id="analytics-controls"></div>
       </footer>
     </div>
-    {% for script in config.extra_javascript %}{{ script | script_tag }}{% endfor %}
   </body>
 </html>

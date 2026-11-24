@@ -9,6 +9,7 @@ from urllib.request import urlopen
 SOURCE = "https://p3-llms.onrender.com/"
 ORIGIN = urlsplit(SOURCE).netloc
 CSS_URL = re.compile(r"""url\(\s*(['"]?)([^)'"\s]+)\1\s*\)""")
+TRACKER = Path(__file__).resolve().parents[1] / "theme" / "analytics.html"
 
 
 class ArticleResources(HTMLParser):
@@ -51,6 +52,8 @@ def mirror(destination):
     resources.feed(page.decode("utf-8"))
     if not resources.has_article:
         raise ValueError("The public Argon page did not contain an article.")
+    if b"</head>" not in page:
+        raise ValueError("The public Argon page did not have a closing head tag.")
 
     pending = set()
     downloaded = set()
@@ -71,7 +74,7 @@ def mirror(destination):
             add_local_urls(pending, (match[1] for match in CSS_URL.findall(data.decode("utf-8"))), url)
 
     destination.mkdir(parents=True, exist_ok=True)
-    (destination / "index.html").write_bytes(page)
+    (destination / "index.html").write_bytes(page.replace(b"</head>", TRACKER.read_bytes() + b"</head>", 1))
     print(f"Mirrored the public Argon article and {len(downloaded)} assets.")
 
 
